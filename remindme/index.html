@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RemindMe - Campus Bulletin Board</title>
+<link rel="stylesheet" href="assets/login.css">
+</head><body>
+<div class="wrap">
+  <section class="brand">
+    <svg width="90" height="90" viewBox="0 0 90 90" aria-hidden="true">
+      <rect x="6" y="14" width="78" height="64" rx="6" fill="#f4d35e" stroke="#b5651d" stroke-width="5"/>
+      <rect x="16" y="24" width="20" height="14" rx="2" fill="#fff" stroke="#222" stroke-width="2"/>
+      <rect x="42" y="24" width="14" height="14" rx="2" fill="#3fa7d6" stroke="#222" stroke-width="2"/>
+      <rect x="62" y="24" width="14" height="42" rx="2" fill="#e5252a" stroke="#222" stroke-width="2"/>
+      <circle cx="26" cy="56" r="10" fill="#2ec4a0" stroke="#222" stroke-width="2"/>
+      <rect x="40" y="48" width="16" height="4" fill="#222"/><rect x="40" y="58" width="16" height="4" fill="#222"/>
+      <circle cx="45" cy="8" r="3" fill="#888"/>
+    </svg>
+    <h1>RemindMe<small>Campus Bulletin Board</small></h1>
+    <p>One place for class schedules, quizzes, exams and university announcements, so you never miss out.</p>
+    <span class="uni">University of Eastern Pangasinan</span>
+  </section>
+
+  <form method="post" action="login.php" id="loginForm" autocomplete="off">
+    <h2 id="formTitle">Student Dashboard Login</h2>
+    <p class="hint">Choose your dashboard, then log in.</p>
+    <div class="alert" id="error" hidden>Invalid email, password, or role.</div>
+
+    <div class="roles">
+      <div><input type="radio" name="role" id="r-admin" value="admin"><label for="r-admin"><b>Admin Dashboard</b><small>Exams, university announcements, users</small></label></div>
+      <div><input type="radio" name="role" id="r-faculty" value="faculty"><label for="r-faculty"><b>Faculty Dashboard</b><small>Class schedule, quizzes, class announcements</small></label></div>
+      <div><input type="radio" name="role" id="r-student" value="student" checked><label for="r-student"><b>Student Dashboard</b><small>View announcements only</small></label></div>
+    </div>
+
+    <input type="email" id="email" name="email" placeholder="Email" autocomplete="off" readonly required>
+
+    <div class="pass-box">
+      <input type="password" id="password" name="password" placeholder="Password" autocomplete="new-password" readonly required>
+      <button type="button" class="toggle" id="togglePass" aria-label="Show password">
+        <svg class="eye" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg class="eye-off" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      </button>
+    </div>
+
+    <button type="submit" class="submit">Log in</button>
+
+    <div class="divider"><span>or</span></div>
+    <a class="create" href="register.html">Create new account</a>
+  </form>
+</div>
+<script src="assets/login.js"></script>
+</body></html>

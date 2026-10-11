@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create account - RemindMe</title>
+<link rel="stylesheet" href="assets/login.css">
+</head><body>
+<div class="wrap" style="max-width:520px;grid-template-columns:1fr">
+  <form method="post" action="register.php" autocomplete="off">
+    <h2>Create student account</h2>
+    <p class="hint">Register with your course and section to start receiving announcements.</p>
+
+    <div class="alert" id="error" hidden></div>
+
+    <input type="text" name="name" placeholder="Full name" required>
+    <input type="email" name="email" placeholder="Email" required>
+
+    <div class="pass-box">
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <button type="button" class="toggle" id="togglePass" aria-label="Show password">
+        <svg class="eye" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg class="eye-off" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      </button>
+    </div>
+
+    <input type="password" name="confirm_password" placeholder="Confirm password" required>
+
+    <select name="course_code" required>
+      <option value="">Select course</option>
+      <option value="BSIT">BSIT</option>
+      <option value="BSBA">BSBA</option>
+      <option value="BSHM">BSHM</option>
+      <option value="BSCrim">BSCrim</option>
+      <option value="BSED">BSED</option>
+      <option value="BEED">BEED</option>
+      <option value="CCJE">CCJE (criminal justice education)</option>
+      <option value="MIDWIFERY">MIDWIFERY</option>
+      <option value="BSA">BSA</option>
+    </select>
+
+    <input type="text" name="section" placeholder="Section (e.g. 1A or 2B)" required>
+
+    <button type="submit" class="submit">Create account</button>
+    <div class="divider"><span>or</span></div>
+    <a class="create" href="index.html">Back to log in</a>
+  </form>
+</div>
+<script>
+const pass = document.getElementById('password');
+const toggle = document.getElementById('togglePass');
+const eye = toggle.querySelector('.eye');
+const eyeOff = toggle.querySelector('.eye-off');
+
+toggle.addEventListener('click', () => {
+  const show = pass.type === 'password';
+  pass.type = show ? 'text' : 'password';
+  eye.hidden = show;
+  eyeOff.hidden = !show;
+  toggle.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+});
+
+const params = new URLSearchParams(window.location.search);
+if (params.get('error')) {
+  const box = document.getElementById('error');
+  box.hidden = false;
+  box.textContent = params.get('error') === 'duplicate'
+    ? 'That email is already registered.'
+    : 'Please complete all required fields and make sure the passwords match.';
+}
+</script>
+</body></html>
