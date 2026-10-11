@@ -13,9 +13,5 @@ PHP + MySQL (XAMPP) project.
 | Dashboard | Email | Password |
 |---|---|---|
 | Admin   | admin@remindme.test   | admin123   |
-| Faculty | faculty@remindme.test | faculty123 |
-| Student | student@remindme.test | student123 |
-
-## Notes
-- `migration.sql` is only for databases imported from an older version. A fresh import of `database.sql` does not need it.
-- Database name: `remindme` (change it in `config.php` if needed).
+| Faculty | ohhimark@gmail.com | multiplier |
+| Student | rorynite1225@gmail.com | student123 |
