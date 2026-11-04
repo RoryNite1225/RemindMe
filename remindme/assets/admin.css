@@ -1,0 +1,34 @@
+/* Extra styles for the admin dashboard (shared base is style.css) */
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.topbar h1{margin:0}.topbar p{margin:2px 0 0}
+.topbar .btn{margin:0}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:18px}
+.stat{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:12px;padding:16px;
+      display:flex;flex-direction:column;gap:4px;color:var(--muted);font-size:.85rem}
+.stat .num{font-size:2rem;font-weight:700;color:var(--text)}
+.stat.ok{border-top-color:#35c27a}.stat.warn{border-top-color:var(--accent)}
+.stat.info{border-top-color:#3fa7d6}.stat.muted{border-top-color:#5b6482}
+
+.two-col{display:grid;grid-template-columns:3fr 2fr;gap:18px;margin-bottom:0}
+.panel h2{margin:0 0 12px;font-size:1.05rem}
+.panel h2.mt{margin-top:22px}
+
+.bar-row{display:grid;grid-template-columns:150px 1fr 30px;align-items:center;gap:10px;margin:9px 0;font-size:.88rem}
+.bar-label{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar{background:#0f1420;border-radius:99px;height:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .7s ease}
+
+.plain{list-style:none;margin:0;padding:0}
+.plain li{display:flex;flex-direction:column;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.actions .btn{margin:0;padding:8px 14px;font-size:.85rem}
+
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tools input{width:220px;padding:8px 10px}
+.seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{background:transparent;color:var(--muted);border:0;padding:8px 12px;cursor:pointer;font:inherit;font-size:.82rem}
+.seg button.on{background:var(--accent);color:#1b1400;font-weight:600}
+#postsTable{margin:12px 0}
+
+@media(max-width:900px){.two-col{grid-template-columns:1fr}.bar-row{grid-template-columns:110px 1fr 28px}}
